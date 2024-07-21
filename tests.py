@@ -31,7 +31,7 @@ class TestBooksCollector:
     def test_add_new_book_check_genre_is_empty(self, collector):
         collector.add_new_book('Гордость и предубеждение')
 
-        assert collector.books_genre['Гордость и предубеждение'] is ''
+        assert collector.books_genre['Гордость и предубеждение'] == ''
 
     @pytest.mark.parametrize('book_name', ['', 'Z'*41])
     def test_add_new_book_check_valid_length_of_name(self, collector, book_name):
